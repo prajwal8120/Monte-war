@@ -27,7 +27,7 @@ pipeline{
                                   "target": "monte-libs-snapshot-local/{1}",
                                   "flat": "false",
                                   "props" : "${properties}",
-                                  "exclusions": [ "*.sha1", "*.md5", "target/dockeransible-v1.0.0/*", target/maven-archiver/*]
+                                  "exclusions": [ "*.sha1", "*.md5", "target/dockeransible-v1.0.0/*", "target/maven-archiver/*"]
                                 }
                              ]
                          }"""
