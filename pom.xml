@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>dockeransibler</finalName>
+    <finalName>dockeransible-v1.0.0</finalName>
     
     </build>
   <properties>
