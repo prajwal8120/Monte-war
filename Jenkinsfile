@@ -1,4 +1,6 @@
+def imageName = 'admirals.jfrog.io/tycoon-doc-docker/web-app'
 def registry  = 'https://admirals.jfrog.io'
+def version = 'v1.0.0'
 pipeline{
     agent{
         label 'slave-java'
@@ -39,6 +41,27 @@ pipeline{
                 }
             }   
         }
+        stage(" Docker Build ") {
+          steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName+":"+version)
+               echo '<--------------- Docker Build Ends --------------->'
+            }
+          }
+        }
+
+        stage (" Docker Publish "){
+            steps {
+                script {
+                   echo '<--------------- Docker Publish Started --------------->'  
+                    docker.withRegistry(registry, 'jfrog-key'){
+                        app.push()
+                    }    
+                   echo '<--------------- Docker Publish Ended --------------->'  
+                }
+            }
+        }         
 
     }
 }
