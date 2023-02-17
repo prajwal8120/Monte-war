@@ -24,7 +24,7 @@ pipeline{
                               "files": [
                                 {
                                   "pattern": "target/(*)",
-                                  "target": "monte-libs-release-local/{1}",
+                                  "target": "monte-libs-snapshot-local/{1}",
                                   "flat": "false",
                                   "props" : "${properties}",
                                   "exclusions": [ "*.sha1", "*.md5"]
