@@ -1,4 +1,4 @@
-def imageName = 'admirals.jfrog.io/monte-libs-release-local/webapp'
+def imageName = 'admirals.jfrog.io/monte-doc-docker/webapp'
 def registry  = 'https://admirals.jfrog.io'
 def version = 'v1.0.10'
 pipeline{
