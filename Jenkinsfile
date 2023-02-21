@@ -1,6 +1,6 @@
-def imageName = 'admirals.jfrog.io/tycoon-doc-docker/web-app'
+def imageName = 'admirals.jfrog.io/tycoon-doc-docker/webapp'
 def registry  = 'https://admirals.jfrog.io'
-def version = 'v1.0.1'
+def version = 'v1.0.10'
 pipeline{
     agent{
         label 'slave-java'
@@ -29,7 +29,7 @@ pipeline{
                                   "target": "monte-libs-snapshot-local/{1}",
                                   "flat": "false",
                                   "props" : "${properties}",
-                                  "exclusions": [ "*.sha1", "*.md5", "target/dockeransible-v1.0.1/*", "target/maven-archiver/*"]
+                                  "exclusions": [ "*.sha1", "*.md5", "target/dockeransible-v1.0.10/*", "target/maven-archiver/*"]
                                 }
                              ]
                          }"""
@@ -58,7 +58,7 @@ pipeline{
                     docker.withRegistry(registry, 'jfrog-key'){
                         app.push()
                     }    
-                   echo '<--------------- Docker Publish Ended --------------->'  
+                   echo '<--------------- Docker Publish Completed --------------->'  
                 }
             }
         }         
