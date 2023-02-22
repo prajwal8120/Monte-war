@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sokios-deploy
+  namespace: sokios
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sokios-app
+  template:
+    metadata:
+      labels:
+        app: sokios-app
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers: 
+      - name: sokios-web
+        image: admirals.jfrog.io/monte-doc-docker/webapp:v1.0.10
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
