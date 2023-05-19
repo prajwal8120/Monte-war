@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Monte_war_1684469307708-push-trigger-input-set
+  identifier: Build_Monte_war_1684469307708pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: pocdemo
+  pipeline:
+    identifier: Build_Monte_war_1684469307708
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
