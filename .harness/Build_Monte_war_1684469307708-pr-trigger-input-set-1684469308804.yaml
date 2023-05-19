@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Monte_war_1684469307708-pr-trigger-input-set
+  identifier: Build_Monte_war_1684469307708prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: pocdemo
+  pipeline:
+    identifier: Build_Monte_war_1684469307708
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
